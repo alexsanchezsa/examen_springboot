@@ -29,26 +29,57 @@ public class Habilidad {
     @Column(length = 50)
     private String categoria;
 
-    public Habilidad() {}
-
-    public Long getId()                
-    { return id; }
-    public void setId(Long id){
-    	this.id = id; 
+    public Habilidad() {
     }
 
-    public String getNombre()               { return nombre; }
-    public void setNombre(String nombre)    { this.nombre = nombre; }
+	public Long getId() {
+		return id;
+	}
 
-    public String getDescripcion()                  { return descripcion; }
-    public void setDescripcion(String descripcion)  { this.descripcion = descripcion; }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public String getDificultad()                   { return dificultad; }
-    public void setDificultad(String dificultad)    { this.dificultad = dificultad; }
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-    public Integer getExperiencia()                     { return experiencia; }
-    public void setExperiencia(Integer experiencia)     { this.experiencia = experiencia; }
+	public String getDificultad() {
+		return dificultad;
+	}
 
-    public String getCategoria()                { return categoria; }
-    public void setCategoria(String categoria)  { this.categoria = categoria; }
+	public Integer getExperiencia() {
+		return experiencia;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void setDificultad(String dificultad) {
+		this.dificultad = dificultad;
+	}
+
+
+	public void setExperiencia(Integer experiencia) {
+		this.experiencia = experiencia;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+   
 }
