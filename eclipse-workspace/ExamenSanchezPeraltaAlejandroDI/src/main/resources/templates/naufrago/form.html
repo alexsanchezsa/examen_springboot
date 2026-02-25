@@ -24,7 +24,7 @@
               <div class="row g-3">
 
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Nombre *</label>
+                  <label class="form-label fw-semibold">Nombre </label>
                   <input type="text" class="form-control" th:field="*{nombre}"
                          th:classappend="${#fields.hasErrors('nombre')} ? 'is-invalid'">
                   <div class="invalid-feedback" th:errors="*{nombre}"></div>
@@ -69,7 +69,7 @@
                             th:selected="${naufrago.habilidades != null && naufrago.habilidades.contains(h)}">
                     </option>
                   </select>
-                  <div class="form-text">Mantén Ctrl (o Cmd en Mac) para seleccionar varias.</div>
+                  <div class="form-text">Mantener pulsado ctrl para varias.</div>
                 </div>
 
               </div>

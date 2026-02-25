@@ -56,6 +56,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- H2: base de datos en memoria para ejecutar tests sin necesitar MySQL -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+        	<groupId>com.BiblioBox</groupId>
+        	<artifactId>pre</artifactId>
+        	<version>4.0.3</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
