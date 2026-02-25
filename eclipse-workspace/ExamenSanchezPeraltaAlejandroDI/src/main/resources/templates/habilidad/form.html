@@ -22,7 +22,7 @@
                   th:object="${habilidad}" method="post">
 
               <div class="mb-3">
-                <label class="form-label fw-semibold">Nombre *</label>
+                <label class="form-label fw-semibold">Nombre </label>
                 <input type="text" class="form-control" th:field="*{nombre}"
                        th:classappend="${#fields.hasErrors('nombre')} ? 'is-invalid'">
                 <div class="invalid-feedback" th:errors="*{nombre}"></div>
