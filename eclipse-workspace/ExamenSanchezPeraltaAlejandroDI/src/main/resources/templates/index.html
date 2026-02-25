@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Naufragados</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+  <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+  <div class="container mt-5">
+    <div class="text-center mb-5">
+      <h1 class="display-4">🏝️ Naufragados</h1>
+      <p class="lead text-muted">Sistema de gestión de náufragos y habilidades</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card shadow h-100 border-0">
+          <div class="card-body text-center p-4">
+            <div class="fs-1 mb-3">🛠️</div>
+            <h5 class="card-title">Habilidades</h5>
+            <p class="card-text text-muted">Gestiona las habilidades de supervivencia</p>
+            <a th:href="@{/habilidades}" class="btn btn-primary me-2">Ver listado</a>
+            <a th:href="@{/habilidades/nueva}" class="btn btn-outline-primary">Nueva</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100 border-0">
+          <div class="card-body text-center p-4">
+            <div class="fs-1 mb-3">🧑‍🤝‍🧑</div>
+            <h5 class="card-title">Náufragos</h5>
+            <p class="card-text text-muted">Gestiona el registro de náufragos</p>
+            <a th:href="@{/naufragos}" class="btn btn-success me-2">Ver listado</a>
+            <a th:href="@{/naufragos/nuevo}" class="btn btn-outline-success">Nuevo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100 border-0">
+          <div class="card-body text-center p-4">
+            <div class="fs-1 mb-3">📊</div>
+            <h5 class="card-title">Gráficos</h5>
+            <p class="card-text text-muted">Estadísticas y visualizaciones</p>
+            <a th:href="@{/graficos}" class="btn btn-warning">Ver gráficos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

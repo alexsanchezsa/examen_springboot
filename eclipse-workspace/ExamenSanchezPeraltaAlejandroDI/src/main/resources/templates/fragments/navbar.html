@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" th:href="@{/}">
+      🏝️ Naufragados
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/habilidades}">Habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/naufragos}">Náufragos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/graficos}">Gráficos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

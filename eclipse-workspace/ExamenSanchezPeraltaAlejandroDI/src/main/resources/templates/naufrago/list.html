@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Náufragos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+  <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>🧑‍🤝‍🧑 Náufragos</h2>
+      <a th:href="@{/naufragos/nuevo}" class="btn btn-success">+ Nuevo náufrago</a>
+    </div>
+
+    <div th:if="${msg}" class="alert alert-success alert-dismissible fade show" role="alert">
+      <span th:text="${msg}"></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-0">
+        <table class="table table-hover table-striped mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Sexo</th>
+              <th>Isla</th>
+              <th>Nacionalidad</th>
+              <th>Fecha Rescate</th>
+              <th>Habilidades</th>
+              <th class="text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:if="${#lists.isEmpty(naufragos)}">
+              <td colspan="9" class="text-center text-muted py-4">No hay náufragos registrados</td>
+            </tr>
+            <tr th:each="n : ${naufragos}">
+              <td th:text="${n.id}"></td>
+              <td th:text="${n.nombre}"></td>
+              <td th:text="${n.edad}"></td>
+              <td th:text="${n.sexo}"></td>
+              <td th:text="${n.isla}"></td>
+              <td th:text="${n.nacionalidad}"></td>
+              <td th:text="${n.fechaRescate}"></td>
+              <td>
+                <span th:each="h, iterStat : ${n.habilidades}">
+                  <span class="badge bg-info text-dark" th:text="${h.nombre}"></span>
+                </span>
+                <span th:if="${#lists.isEmpty(n.habilidades)}" class="text-muted">-</span>
+              </td>
+              <td class="text-center">
+                <a th:href="@{/naufragos/editar/{id}(id=${n.id})}" class="btn btn-sm btn-outline-warning me-1">Editar</a>
+                <form th:action="@{/naufragos/eliminar/{id}(id=${n.id})}" method="post" class="d-inline"
+                      onsubmit="return confirm('¿Eliminar a ' + '[[${n.nombre}]]' + '?')">
+                  <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
